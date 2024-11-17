@@ -8,6 +8,9 @@ NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
 
 
 # Architecture
+## Fediverse
+https://wikipedia.org/wiki/Fediverse
+
 ## Nodes
 Each server running an RS implementation is called a Node.
 The Node typically provides the frontend as well as the backend API; however, a Node may provide one or neither if desired.
@@ -35,6 +38,7 @@ Direct Messages, also referred to as DMs, are defined as Posts shared between us
 ## Relays
 Each Node optionally acts as a Relay.
 A Relay scrapes and relays information from other Relays.
+Nodes communicate with other Relays to propagate their Posts across the Fediverse.
 
 ## Hosts & CDNs
 For Content storage, Nodes MAY host their own Content or use a large CDN.
