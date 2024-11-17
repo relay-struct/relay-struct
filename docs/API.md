@@ -9,9 +9,8 @@ NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
 This document follows the format defined in [this gist](https://gist.github.com/azagniotov/a4b16faf0febd12efbc6c3d7370383a6).
 
 # RelayStruct API
+
 ## Index
 - [Relay](api/RELAY.md)
 - [Host](api/HOST.md)
 - [User Identification](api/USERID.md)
-
-##

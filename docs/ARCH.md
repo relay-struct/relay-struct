@@ -7,6 +7,7 @@ NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
 [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119).
 
 # Architecture
+
 ## Fediverse
 https://wikipedia.org/wiki/Fediverse
 
