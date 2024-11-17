@@ -1,11 +1,13 @@
 # User Identification
 
-## Query User ID
+## Requests
+
+### Query User ID
 
 <details>
 <summary><code>GET</code> <code>/_rs/uid/v0/query</code></summary>
 
-### Parameters
+### Request
 | name   | optional | type     | description        |
 |--------|----------|----------|--------------------|
 | handle | required | `string` | The user's Handle. |
