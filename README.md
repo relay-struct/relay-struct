@@ -1,6 +1,6 @@
 # `relay-struct` (Relay Structure)
 <!--An attempt to solve the problems of ATProto and ActivityPub.-->
-A pet project of (so far only) mine to better understand distributed networking.
+A project to better understand distributed networking in social media.
 
 ## Issues with ActivityPub
 🚧 *Work in progress.* 🚧
