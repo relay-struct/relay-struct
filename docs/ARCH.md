@@ -33,7 +33,7 @@ A Post MAY also refer to:
 - A status update.
 
 ### Direct Messages (DMs)
-Direct Messages, also referred to as DMs, are defined as Posts shared between users directly. Nodes MAY moderate DMs as they see fit. However, End-to-End Encrypted DMs MUST only be moderated when prompted by a user using a report feature. Nodes SHOULD provide End-to-End Encryption for users in DMs. Nodes MUST NOT claim to provide End-to-End Encryption when other involved Nodes do not provide such a feature or when Nodes can access either end decrypted without user involvement. Nodes SHOULD notify users when they enter a chat with another user of a Node that does not support End-to-End Encryption.
+Direct Messages, also referred to as DMs, are defined as Posts shared between users directly. Nodes MAY moderate DMs as they see fit. However, End-to-End Encrypted DMs MUST only be moderated when prompted by a user using a report feature. Nodes SHOULD provide End-to-End Encryption for users in DMs, but Nodes MUST NOT claim to provide End-to-End Encryption when other involved Nodes do not provide such a feature or when Nodes can access either end decrypted without user involvement, and Nodes SHOULD notify users when they enter a chat with another user of a Node that does not support End-to-End Encryption.
 
 ## Relays
 Each Node optionally acts as a Relay.
