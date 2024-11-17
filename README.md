@@ -9,3 +9,4 @@ An attempt to solve the problems of ATProto and ActivityPub.
 
 ## The Solution
 🚧 *Work in progress.* 🚧
+See [ARCH.md](/docs/ARCH.md)
