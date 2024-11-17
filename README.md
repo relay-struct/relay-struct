@@ -1,5 +1,6 @@
 # `relay-struct` (Relay Structure)
-An attempt to solve the problems of ATProto and ActivityPub.
+<!--An attempt to solve the problems of ATProto and ActivityPub.-->
+A pet project of (so far only) mine to better understand distributed networking.
 
 ## Issues with ActivityPub
 🚧 *Work in progress.* 🚧
@@ -7,7 +8,7 @@ An attempt to solve the problems of ATProto and ActivityPub.
 ## Issues with ATProto
 🚧 *Work in progress.* 🚧
 
-## The Solution
+## Standard
 🚧 *Work in progress.* 🚧
 
 See [ARCH.md](/docs/ARCH.md) for more information.
