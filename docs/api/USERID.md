@@ -30,9 +30,16 @@
 }
 ```
 
+#### `400 Bad Request`
+The requested Handle is unable to be parsed.
+| name   | optional | type     | description           |
+|--------|----------|----------|-----------------------|
+| handle | required | `string` | The requested Handle. |
+
 #### `404 Not Found`
 The requested Handle does not exist.
 | name   | optional | type     | description           |
 |--------|----------|----------|-----------------------|
 | handle | required | `string` | The requested Handle. |
+
 </details>
