@@ -16,3 +16,8 @@ This document follows the format defined in [this gist](https://gist.github.com/
 - [Relay](api/RELAY.md)
 - [Host](api/HOST.md)
 - [User Identification](api/USERID.md)
+
+## Description
+All RelayStruct APIs follow the `/_rs/{API}/v{version}` format.
+This is for clarity, compartmentalization, and ease of implementation.
+Additionally, all APIs MUST support JSON requests and responses.
