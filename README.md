@@ -10,3 +10,6 @@ An attempt to solve the problems of ATProto and ActivityPub.
 ## The Solution
 🚧 *Work in progress.* 🚧
 See [ARCH.md](/docs/ARCH.md)
+
+## Contributing / What You Should Know
+We use [Conventional Commits](https://www.conventionalcommits.org/) for our commit messages. All commit messages must follow this convention or they will be renamed to conform.
