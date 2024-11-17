@@ -6,7 +6,6 @@ NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
 "OPTIONAL" in this document are to be interpreted as described in
 [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119).
 
-
 # Architecture
 ## Fediverse
 https://wikipedia.org/wiki/Fediverse
@@ -60,16 +59,16 @@ There are two common Handle formats a Node MUST recognize:
 - Common Handles
 
 ### Canonical Handles
-Canonical Handles are defined as `domain:handle` where `domain` refers to a Node's Domain and `handle` refers to a Handle.
+Canonical Handles are defined as `domain:user` where `domain` refers to a Node's Domain and `user` refers to a username.
 
 ### Common Handles
-Common Handles are defined as `@handle@domain`. Common handles are to be used by users.
+Common Handles are defined as `@user@domain`. Common handles are to be used by users.
 
 ### Additional Formats
 Nodes MAY implement additional formats including but not limited to:
-- Matrix Handles (`@handle:domain`)
-- E-Mail Handles (`handle@domain`)
-- Discriminated Handles (`handle#discrim`) where `discrim` refers to a four-digit base-ten string.
+- Matrix Handles (`@user:domain`)
+- E-Mail Handles (`user@domain`)
+- Discriminated Handles (`user#discrim`) where `discrim` refers to a four-digit base-ten string.
 However, Nodes MUST implement an API as defined by `relay-struct` to convert these additional formats into a Canonical Handle.
 
 ## User Identification
