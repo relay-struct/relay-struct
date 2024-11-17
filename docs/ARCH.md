@@ -70,6 +70,7 @@ Nodes MAY implement additional formats including but not limited to:
 - Matrix Handles (`@user:domain`)
 - E-Mail Handles (`user@domain`)
 - Discriminated Handles (`user#discrim`) where `discrim` refers to a four-digit base-ten string.
+
 However, Nodes MUST implement an API as defined by `relay-struct` to convert these additional formats into a Canonical Handle.
 
 ## User Identification
