@@ -11,6 +11,8 @@ This document follows the format defined in [this gist](https://gist.github.com/
 # RelayStruct API
 
 ## Index
+- [Node Core](api/CORE.md)
+- [Post](api/POST.md)
 - [Relay](api/RELAY.md)
 - [Host](api/HOST.md)
 - [User Identification](api/USERID.md)
