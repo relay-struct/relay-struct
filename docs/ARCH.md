@@ -18,6 +18,10 @@ A Node MUST provide a method of communication with other Nodes via `relay-struct
 A Node MAY block specific Nodes from communication (a blocklist).
 A Node MAY also block all but specific Nodes from communication (an allowlist).
 
+## Domains
+Domains refer to domain names [as defined by the IETF](https://www.rfc-editor.org/rfc/rfc1035).
+Each Node MUST have at least one Domain. Nodes MUST NOT be referred to by their IP address in Handles.
+
 ## Posts & Content
 A Post is a container for data sent by a user.
 
@@ -49,5 +53,27 @@ Nodes may also cache messages and media relayed from other Hosts or CDNs in thei
 It is RECOMMENDED that caches last no longer than one month per Post.
 Keeping caches for too long may lead to storage and privacy concerns.
 
+## Handles
+A Handle is a user's username, UUID, or other identifier for other Nodes to look up.
+There are two common Handle formats a Node MUST recognize:
+- Canonical Handles
+- Common Handles
+
+### Canonical Handles
+Canonical Handles are defined as `domain:handle` where `domain` refers to a Node's Domain and `handle` refers to a Handle.
+
+### Common Handles
+Common Handles are defined as `@handle@domain`. Common handles are to be used by users.
+
+### Additional Formats
+Nodes MAY implement additional formats including but not limited to:
+- Matrix Handles (`@handle:domain`)
+- E-Mail Handles (`handle@domain`)
+- Discriminated Handles (`handle#discrim`) where `discrim` refers to a four-digit base-ten string.
+However, Nodes MUST implement an API as defined by `relay-struct` to convert these additional formats into a Canonical Handle.
+
 ## User Identification
-User Identification is stored in users' respective Nodes. Each user MUST have a public and private key used to determine Content integrity and prevent tampering. *The algorithms used are currently undefined! This is subject to change in the near future.*
+User Identification entails a Handle and a public and private key for Content integrity.
+User Identification is stored in users' respective Nodes.
+Each user MUST have a public and private key used to determine Content integrity and prevent tampering.
+*The algorithms used are currently undefined! This is subject to change in the near future.*
