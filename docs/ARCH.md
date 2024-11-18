@@ -46,6 +46,10 @@ Content refers to one of three things:
 - Messages
 - Miscellaneous Data that a user attaches to a Post.
 
+## Capabilities
+A Capability is a Node's support for a specific feature (e.g. Host, Relay, User ID).
+Nodes MUST publicly describe their capabilities.
+
 ## Posts
 A Post is a container for data sent by a user.
 A Post contains Content or metadata that describes an interaction with another Post or with the platform, and each Post has an associated visibility that other Nodes MUST respect.
@@ -56,10 +60,6 @@ A Post MAY also refer to:
 
 ### Direct Messages (DMs)
 Direct Messages, also referred to as DMs, are defined as Posts shared between users directly. Nodes MAY moderate DMs as they see fit. However, End-to-End Encrypted DMs MUST only be moderated when prompted by a user using a report feature. Nodes SHOULD provide End-to-End Encryption for users in DMs, but Nodes MUST NOT claim to provide End-to-End Encryption when other involved Nodes do not provide such a feature or when Nodes can access either end decrypted without user involvement, and Nodes SHOULD notify users when they enter a chat with another user of a Node that does not support End-to-End Encryption.
-
-## Capabilities
-A Capability is a Node's support for a specific feature (e.g. Host, Relay, User ID).
-Nodes MUST publicly describe their capabilities.
 
 ### Relays
 Each Node optionally acts as a Relay.

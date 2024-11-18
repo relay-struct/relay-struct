@@ -7,7 +7,7 @@
 <details>
 <summary><code>GET</code> <code>/_rs/uid/v0/query</code></summary>
 
-### Request
+#### Request
 | name   | optional | type     | description        |
 |--------|----------|----------|--------------------|
 | handle | required | `string` | The user's Handle. |
@@ -18,9 +18,9 @@
 }
 ```
 
-### Response
+#### Response
 
-#### `200 OK`
+##### `200 OK`
 | name   | optional | type     | description                  |
 |--------|----------|----------|------------------------------|
 | handle | required | `string` | The user's Canonical Handle. |
@@ -33,13 +33,13 @@
 }
 ```
 
-#### `400 Bad Request`
+##### `400 Bad Request`
 The requested Handle is unable to be parsed.
 | name   | optional | type     | description           |
 |--------|----------|----------|-----------------------|
 | handle | required | `string` | The requested Handle. |
 
-#### `404 Not Found`
+##### `404 Not Found`
 The requested Handle does not exist.
 | name   | optional | type     | description           |
 |--------|----------|----------|-----------------------|
