@@ -2,17 +2,17 @@ use serde::{Serialize, Deserialize};
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Handle {
-	pub username: String,
 	pub domain: String,
+	pub user: String,
 }
 
 impl Handle {
 	pub fn parse_canonical(handle: String) -> Option<Self> {
-		let (username, domain) = handle.split_once(':')?;
+		let (domain, user) = handle.split_once(':')?;
 		Some(
 			Self {
-				username: username.to_string(),
 				domain: domain.to_string(),
+				user: user.to_string(),
 			}
 		)
 	}
