@@ -38,7 +38,7 @@ Common Handles are defined as `@user@domain`. Common handles are to be used by u
 Nodes MAY implement additional formats including but not limited to:
 - Matrix Handles (`@user:domain`)
 - E-Mail Handles (`user@domain`)
-- Discriminated Handles (`user#discrim`) where `discrim` refers to a four-digit base-ten string.
+- Discriminated Handles (`user#discrim`) where `discrim` refers to a four-digit base-ten string. Note that Discriminated Handles cannot be used to refer to users of other Nodes. This may be solved by using a `domain:user#discrim` format which is compatible with the Canonical Handle format.
 
 ## Content
 Content refers to one of three things:
