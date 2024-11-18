@@ -51,5 +51,52 @@ N/A
 
 ##### `404 Not Found`
 The requested capability does not exist.
+| name       | optional | type     | description                     |
+|------------|----------|----------|---------------------------------|
+| capability | required | `string` | The API name of the capability. |
+
+```json5
+{
+	"capability": "relay"
+}
+```
+
+</details>
+
+### Host Redirect
+Indicates if this Host redirects to another Host.
+
+<details>
+<summary><code>GET</code> <code>/_rs/core/v0/host/redirects</summary>
+
+#### Request
+*No body.*
+
+#### Response
+##### `200 OK`
+| name      | optional | type             | description                                  |
+|-----------|----------|------------------|----------------------------------------------|
+| redirects | required | `boolean`        | If this Host redirects to another Host.      |
+| links     | optional | `array (string)` | A list of Hosts that this Host redirects to. |
+
+```json5
+{
+	"redirects": true,
+	"links": ["https://rs-host.example.net", "https://example.com/rs_host"]
+}
+```
+
+##### `418 I'm a teapot`
+This Node is not a Host.
+
+| name  | optional | type     | description            |
+|-------|----------|----------|------------------------|
+| error | optional | `string` | The error description. |
+
+```json5
+{
+	"error": "I am not a Host, so I refuse to respond with Content."
+}
+```
 
 </details>
