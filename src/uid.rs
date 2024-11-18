@@ -22,7 +22,7 @@ impl Handle {
 			return None
 		}
 
-		let handle = &handle[1..=handle.len()];
+		let handle = &handle[1..]; // Spooky!
 		let (user, domain) = handle.split_once("@")?;
 		Some(
 			Self {
