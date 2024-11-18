@@ -9,5 +9,10 @@ license = "EUPL-1.2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 
+# Server
+axum = "0.7.9"
+tokio = "1"
+
 # Utilities
 log = "0.4.22"
+thiserror = "2"
