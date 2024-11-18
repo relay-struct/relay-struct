@@ -42,6 +42,11 @@ impl Handle {
 	pub fn to_canonical(&self) -> String {
 		format!("{}:{}", self.domain, self.user)
 	}
+
+	/// Creates a Common Handle.
+	pub fn to_common(&self) -> String {
+		format!("@{}@{}", self.user, self.domain)
+	}
 }
 
 impl FromStr for Handle {
