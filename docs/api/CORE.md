@@ -67,7 +67,7 @@ The requested capability does not exist.
 Indicates if this Host redirects to another Host.
 
 <details>
-<summary><code>GET</code> <code>/_rs/core/v0/host/redirects</summary>
+<summary><code>GET</code> <code>/_rs/core/v0/host/redirects</code></summary>
 
 #### Request
 *No body.*
