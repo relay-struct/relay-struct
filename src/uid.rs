@@ -1,8 +1,6 @@
-pub mod error;
-
 use std::str::FromStr;
 
-use error::{ParseError, ParseResult};
+use crate::error::{ParseError, ParseResult};
 use serde::{Serialize, Deserialize};
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -37,7 +35,7 @@ impl Handle {
 
 	pub fn check_parsed(parsed: Option<Self>, handle: &str) -> ParseResult<Self> {
 		if parsed.is_none() {
-			return Err(ParseError::InvalidFormat(handle.to_string()))
+			return Err(ParseError::InvalidHandle(handle.to_string()))
 		} else {
 			return Ok(parsed.unwrap())
 		}
@@ -55,7 +53,7 @@ impl Handle {
 }
 
 impl FromStr for Handle {
-	type Err = error::ParseError;
+	type Err = crate::error::ParseError;
 
 	fn from_str(handle: &str) -> Result<Self, Self::Err> {
 		let format = HandleFormat::from(handle);
@@ -68,7 +66,7 @@ impl FromStr for Handle {
 				Self::parse_common(handle),
 				handle,
 			),
-			HandleFormat::Unknown => Err(Self::Err::UnknownFormat(handle.to_string())),
+			HandleFormat::Unknown => Err(Self::Err::UnknownHandleFormat(handle.to_string())),
 		}
 	}
 }
