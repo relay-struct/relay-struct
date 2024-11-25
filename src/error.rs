@@ -1,4 +1,4 @@
-use rocket::Responder;
+use rocket::{serde::json::Json, Responder};
 use serde::{ser::SerializeStruct, Serialize};
 use strum::IntoStaticStr;
 use thiserror::Error;
@@ -37,6 +37,7 @@ pub struct Error {
 }
 
 pub type Result<T> = core::result::Result<T, Error>;
+pub type JsonResult<T> = core::result::Result<Json<T>, Json<Error>>;
 
 impl Serialize for Error {
 	fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>

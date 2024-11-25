@@ -33,10 +33,10 @@ impl VersionRange {
 pub fn api_capability<'a>(
 	api_name: &'a str,
 	version_ranges: &'a State<HashMap<Api, VersionRange>>,
-) -> Json<error::Result<&'a VersionRange>> {
+) -> error::JsonResult<&'a VersionRange> {
 	if let Ok(ref api) = Api::from_str(api_name) {
-		Json(Ok(&version_ranges[api]))
+		Ok(Json(&version_ranges[api]))
 	} else {
-		Json(Err(ParseError::UnknownApi(api_name.to_string()).into()))
+		Err(Json(ParseError::UnknownApi(api_name.to_string()).into()))
 	}
 }
