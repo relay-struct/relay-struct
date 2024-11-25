@@ -6,6 +6,8 @@ use strum::IntoStaticStr;
 use thiserror::Error;
 
 #[derive(Error, Serialize, IntoStaticStr, Responder, Debug)]
+#[serde(rename_all = "snake_case")]
+#[strum(serialize_all = "snake_case")]
 pub enum ParseError {
 	#[response(status = 400)]
 	#[error("unknown Handle format: {0}")]
