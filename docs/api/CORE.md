@@ -70,7 +70,7 @@ Indicates if this Host redirects to another Host.
 <summary><code>GET</code> <code>/_rs/core/v0/host/redirects</code></summary>
 
 #### Request
-*No body.*
+N/A
 
 #### Response
 ##### `200 OK`
@@ -86,7 +86,7 @@ Indicates if this Host redirects to another Host.
 }
 ```
 
-##### `418 I'm a teapot`
+##### `501 Not Implemented`
 This Node is not a Host.
 
 | name  | optional | type     | description            |
@@ -95,7 +95,7 @@ This Node is not a Host.
 
 ```json5
 {
-	"error": "I am not a Host, so I refuse to respond with Content."
+	"error": "This Node is not a Host."
 }
 ```
 

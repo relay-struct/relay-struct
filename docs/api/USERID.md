@@ -8,19 +8,17 @@
 <summary><code>GET</code> <code>/_rs/uid/v0/query</code></summary>
 
 #### Request
+##### Query Paremeters
 | name   | optional | type     | description        |
 |--------|----------|----------|--------------------|
 | handle | required | `string` | The user's Handle. |
 
-```json5
-{
-	"handle": "@user@domain"
-}
-```
+`/_rs/uid/v0/query?handle=@user@domain`
 
 #### Response
 
 ##### `200 OK`
+###### `application/json`
 | name   | optional | type     | description                  |
 |--------|----------|----------|------------------------------|
 | handle | required | `string` | The user's Canonical Handle. |
