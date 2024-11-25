@@ -37,6 +37,6 @@ pub fn api_capability<'a>(
 	if let Ok(ref api) = Api::from_str(api_name) {
 		Ok(Json(&version_ranges[api]))
 	} else {
-		Err(Json(ParseError::UnknownApi(api_name.to_string()).into()))
+		Err(ParseError::UnknownApi(api_name.to_string()).into())
 	}
 }
