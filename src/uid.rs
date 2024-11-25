@@ -2,6 +2,7 @@ pub mod error;
 
 use std::str::FromStr;
 
+use error::{ParseError, ParseResult};
 use serde::{Serialize, Deserialize};
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -12,29 +13,33 @@ pub struct Handle {
 
 impl Handle {
 	/// Parse a Canonical Handle
-	///
-	/// # Safety
-	/// This operation is unchecked and uses [Option::unwrap_unchecked].
-	/// It is up to the caller to guarantee that the handle is indeed of Canonical format.
-	pub unsafe fn parse_canonical_unchecked(handle: &str) -> Self {
-		let (domain, user) = unsafe { handle.split_once(':').unwrap_unchecked() };
-		Self {
-			user: user.to_string(),
-			domain: domain.to_string(),
-		}
+	pub fn parse_canonical(handle: &str) -> Option<Self> {
+		let (domain, user) = handle.split_once(':')?;
+		Some(
+			Self {
+				user: user.to_string(),
+				domain: domain.to_string(),
+			}
+		)
 	}
 
 	/// Parse a Common Handle
-	///
-	/// # Safety
-	/// This operation is unchecked and uses [Option::unwrap_unchecked].
-	/// It is up to the caller to guarantee that the handle is indeed of Common format.
-	pub unsafe fn parse_common_unchecked(handle: &str) -> Self {
+	pub fn parse_common(handle: &str) -> Option<Self> {
 		let handle = &handle[1..]; // Spooky!
-		let (user, domain) = unsafe { handle.split_once('@').unwrap_unchecked() };
-		Self {
-			user: user.to_string(),
-			domain: domain.to_string(),
+		let (user, domain) = handle.split_once('@')?;
+		Some(
+			Self {
+				user: user.to_string(),
+				domain: domain.to_string(),
+			}
+		)
+	}
+
+	pub fn check_parsed(parsed: Option<Self>, handle: &str) -> ParseResult<Self> {
+		if parsed.is_none() {
+			return Err(ParseError::InvalidFormat(handle.to_string()))
+		} else {
+			return Ok(parsed.unwrap())
 		}
 	}
 
@@ -53,12 +58,16 @@ impl FromStr for Handle {
 	type Err = error::ParseError;
 
 	fn from_str(handle: &str) -> Result<Self, Self::Err> {
-		// SAFETY:
-		// The operations are checked, fulfilling the safety qualifications.
 		let format = HandleFormat::from(handle);
 		match format {
-			HandleFormat::Canonical => Ok(unsafe { Self::parse_canonical_unchecked(handle) }),
-			HandleFormat::Common => Ok(unsafe { Self::parse_common_unchecked(handle) }),
+			HandleFormat::Canonical => return Handle::check_parsed(
+				Self::parse_canonical(handle),
+				handle,
+			),
+			HandleFormat::Common => Handle::check_parsed(
+				Self::parse_common(handle),
+				handle,
+			),
 			HandleFormat::Unknown => Err(Self::Err::UnknownFormat(handle.to_string())),
 		}
 	}
