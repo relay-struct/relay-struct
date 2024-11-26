@@ -29,7 +29,7 @@ N/A
 ### Capability Support
 
 <details>
-<summary><code>GET</code> <code>/_rs/core/v0/capabilities/{api_name}</code></summary>
+<summary><code>GET</code> <code>/_rs/core/v0/capabilities/&lt;api_name&gt;</code></summary>
 
 #### Request
 N/A
@@ -54,10 +54,12 @@ The requested capability does not exist.
 | name       | optional | type     | description                     |
 |------------|----------|----------|---------------------------------|
 | capability | required | `string` | The API name of the capability. |
+| error      | required | `Error`  | The error.                      |
 
 ```json5
 {
-	"capability": "relay"
+	"capability": "relay",
+	"error": /* ... */
 }
 ```
 
@@ -89,14 +91,8 @@ N/A
 ##### `501 Not Implemented`
 This Node is not a Host.
 
-| name  | optional | type     | description            |
-|-------|----------|----------|------------------------|
-| error | optional | `string` | The error description. |
-
-```json5
-{
-	"error": "This Node is not a Host."
-}
-```
+| name  | optional | type    | description |
+|-------|----------|---------|-------------|
+| error | required | `Error` | The error.  |
 
 </details>

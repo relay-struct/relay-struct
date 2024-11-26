@@ -18,6 +18,15 @@ This document follows the format defined in [this gist](https://gist.github.com/
 - [User Identification](api/USERID.md)
 
 ## Description
-All RelayStruct APIs follow the `/_rs/{API}/v{version}` format.
+All RelayStruct APIs follow the `/_rs/<api_name>/v<api_version>` format.
 This is for clarity, compartmentalization, and ease of implementation.
 Additionally, all APIs MUST support JSON requests and responses.
+
+## Error Handling
+All errors follow the following format:
+| name        | optional | type     | description            |
+|-------------|----------|----------|------------------------|
+| error       | required | `string` | The error.             |
+| error_type  | required | `string` | The error type.        |
+| description | required | `string` | The error description. |
+Any references to this type are referred to as `Error`.

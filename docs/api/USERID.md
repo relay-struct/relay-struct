@@ -36,11 +36,13 @@ The requested Handle is unable to be parsed.
 | name   | optional | type     | description           |
 |--------|----------|----------|-----------------------|
 | handle | required | `string` | The requested Handle. |
+| error  | required | `Error`  | The error.            |
 
 ##### `404 Not Found`
 The requested Handle does not exist.
 | name   | optional | type     | description           |
 |--------|----------|----------|-----------------------|
 | handle | required | `string` | The requested Handle. |
+| error  | required | `Error`  | The error.            |
 
 </details>
