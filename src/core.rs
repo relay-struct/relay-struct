@@ -11,7 +11,5 @@ pub enum Api {
 	Post,
 	Relay,
 	Host,
-	#[serde(rename = "uid")]
-	#[strum(serialize = "uid")]
 	UserId,
 }
